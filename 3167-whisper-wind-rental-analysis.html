@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rental Analysis — 3167 Whisper Wind Drive | Verandah Properties</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#008C82;--teal-deep:#00625B;--gold:#C9A227;--charcoal:#1A1A1A;
+--body:#1F1F1F;--muted:#5A5651;--strong:#0F0F0F;--line:#E2DED7;--paper:#FBFAF7;--panel:#F3F1EC;
+--red:#B5543C;--rose:#D4886F;--green:#4E8C6A;--slate:#6B7C8C}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--body);font-family:'Jost',system-ui,sans-serif;font-weight:400;font-size:16.5px;line-height:1.68}
+.wrap{max-width:900px;margin:0 auto;padding:0 26px}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;color:var(--charcoal)}
+h1{font-size:2.5rem;line-height:1.1;margin:0 0 .4rem}
+h2{font-size:1.8rem;line-height:1.2;margin:0 0 .8rem}
+h3{font-size:1.18rem;margin:1.4rem 0 .45rem}
+p{margin:0 0 1rem;max-width:74ch}
+b,strong{font-weight:600;color:var(--strong)}
+ul{margin:0 0 1rem;padding-left:1.2rem;max-width:74ch}
+li{margin-bottom:.5rem}
+.mast{background:var(--charcoal);color:#F5F3EE;padding:28px 0 30px}
+.brandline{display:flex;align-items:baseline;gap:13px;flex-wrap:wrap}
+.mark{width:33px;height:33px;border-radius:50%;background:var(--teal);color:#fff;font-family:'Cormorant Garamond',serif;font-size:21px;display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;transform:translateY(5px)}
+.brandname{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#F5F3EE}
+.mast .tag{color:#A9A49C;font-size:.83rem;margin-left:auto;text-align:right;line-height:1.5}
+.kicker{color:var(--gold);font-size:.9rem;margin:22px 0 4px}
+.mast h1{color:#FBFAF7;margin-top:4px}
+.mast .sub{color:#B8B2A8;margin:0;font-size:1rem}
+.rec{background:var(--teal);color:#fff;padding:32px 0 30px}
+.rec h2{color:#fff;font-size:1.5rem;margin-bottom:.3rem}
+.rec .lead{color:#D6EDEA;max-width:70ch;margin-bottom:24px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.28);border-radius:10px;overflow:hidden}
+.step{background:var(--teal);padding:20px}
+.step .k{font-size:.82rem;color:#CDE8E5;margin-bottom:6px}
+.step .v{font-family:'Cormorant Garamond',serif;font-size:2.4rem;line-height:1;color:#fff}
+.step .n{font-size:.87rem;color:#CDE8E5;margin-top:7px;line-height:1.45}
+.step:first-child{background:var(--teal-deep)}
+section{padding:38px 0;border-top:1px solid var(--line)}
+.snum{color:var(--teal-deep);font-size:.9rem;margin:0 0 .2rem}
+h2 em{font-style:italic;font-weight:400;color:var(--teal-deep)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;margin:0 0 20px}
+.fact{padding:14px 17px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.fact .k{font-size:.79rem;color:var(--muted);margin-bottom:2px}
+.fact .v{font-weight:600;color:var(--strong)}
+.confirm{color:#8A6D0B;background:#FBF3D8;padding:1px 7px;border-radius:4px;font-weight:600}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:0 0 20px}
+.st{background:#fff;padding:18px}
+.st .v{font-family:'Cormorant Garamond',serif;font-size:2rem;line-height:1.05;color:var(--teal-deep)}
+.st .v.warn{color:var(--red)}
+.st .k{font-size:.85rem;color:var(--muted);margin-top:5px;line-height:1.45}
+.pull{border-left:4px solid var(--gold);background:#fff;padding:19px 24px;border-radius:0 8px 8px 0;margin:0 0 22px}
+.pull p:last-child{margin-bottom:0}
+.anchor{background:#fff;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:10px;padding:22px 26px;margin:0 0 22px}
+.anchor h3{margin-top:0;font-size:1.3rem}
+.anchor .grid{display:grid;grid-template-columns:1fr 1fr;gap:0 24px;margin:14px 0 0}
+.anchor .row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-size:.94rem}
+.anchor .row b{color:var(--teal-deep)}
+.box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:21px 24px;margin:0 0 20px}
+.box h3{margin-top:0}
+.box p:last-child{margin-bottom:0}
+details{border:1px solid var(--line);border-radius:9px;background:#fff;margin:0 0 14px}
+summary{cursor:pointer;padding:15px 19px;font-weight:600;color:var(--teal-deep);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.45rem;color:var(--gold);line-height:1;flex:0 0 auto}
+details[open] summary::after{content:"\2212"}
+summary:hover{background:var(--panel)}
+.dbody{padding:2px 19px 17px}
+.dbody > *:last-child{margin-bottom:0}
+.tscroll{overflow-x:auto;margin:0 0 14px}
+table{border-collapse:collapse;width:100%;font-size:.88rem;background:#fff;min-width:680px}
+th{background:var(--panel);color:var(--strong);font-weight:600;text-align:left;padding:10px 11px;border-bottom:2px solid var(--line);white-space:nowrap}
+td{padding:10px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+tr.hi td{background:#E6F3F1;font-weight:600}
+tr.gold td{background:#FBF3D8}
+td.num,th.num{text-align:right;white-space:nowrap}
+caption{caption-side:bottom;text-align:left;color:var(--muted);font-size:.86rem;padding-top:9px}
+.pill{display:inline-block;font-size:.77rem;padding:2px 8px;border-radius:20px;font-weight:500}
+.fast{background:#DFF0EC;color:#00625B}.slow{background:#F6E3DE;color:#8A3B26}
+.chart{background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px 26px;margin:0 0 22px}
+.chart h3{margin:0 0 4px}
+.chart .cap{font-size:.9rem;color:var(--muted);margin:0 0 18px}
+.bar{display:grid;grid-template-columns:190px 1fr;gap:13px;align-items:center;margin-bottom:11px;font-size:.9rem}
+.track{background:var(--panel);border-radius:4px;height:26px;overflow:hidden}
+.fill{height:26px;border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:10px;color:#fff;font-weight:600;font-size:.85rem;white-space:nowrap}
+.fill.t{background:var(--teal)}.fill.g{background:var(--gold)}.fill.r{background:var(--red)}.fill.s{background:var(--slate)}.fill.gr{background:var(--green)}
+.src{font-size:.85rem;color:var(--muted);margin:14px 0 0;padding-top:13px;border-top:1px solid var(--line)}
+footer{background:var(--charcoal);color:#B8B2A8;padding:30px 0;font-size:.89rem}
+footer .sig{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--gold);margin-bottom:8px}
+footer a{color:#8FD2CB}
+@media(max-width:720px){body{font-size:16px}h1{font-size:1.95rem}h2{font-size:1.45rem}.steps{grid-template-columns:1fr}.anchor .grid{grid-template-columns:1fr}.mast .tag{margin-left:0;width:100%;text-align:left}.bar{grid-template-columns:120px 1fr;font-size:.82rem}}
+@media print{body{background:#fff}section{page-break-inside:avoid}summary::after{content:""}}
+</style>
+</head>
+<body>
+
+<header class="mast">
+  <div class="wrap">
+    <div class="brandline">
+      <span class="mark">V</span>
+      <span class="brandname">Verandah Properties, LLC</span>
+      <span class="tag">Rental Analysis<br>October 2, 2026</span>
+    </div>
+    <p class="kicker">Lake Ajay Village · St. Cloud</p>
+    <h1>3167 Whisper Wind Drive</h1>
+    <p class="sub">St. Cloud, FL 34771 · Single-family, two story · 6 bed / 5 full + 2 half bath · 5,820 sq ft · 0.89 acre · 4-car garage · Private pool and spa · Built 2024</p>
+  </div>
+</header>
+
+<div class="rec">
+  <div class="wrap">
+    <h2>My recommendation</h2>
+    <p class="lead">This is an exceptional home and a genuinely difficult one to price. There are only <b style="color:#fff">two comparable leases</b> in this segment across the entire corridor this year, which means any number is an educated estimate rather than a settled one. I have been conservative deliberately, and I explain every adjustment.</p>
+    <div class="steps">
+      <div class="step"><div class="k">Launch price</div><div class="v">$5,950</div><div class="n">Below the one competing home at this size that has failed to lease in 72 days.</div></div>
+      <div class="step"><div class="k">Day 14 checkpoint</div><div class="v">$5,650</div><div class="n">Longer checkpoint than usual — this segment moves slowly even when priced correctly.</div></div>
+      <div class="step"><div class="k">Day 30</div><div class="v">$5,395</div><div class="n">A step, not a bottom. I keep reading the market and moving with it.</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section style="border-top:none">
+  <p class="snum">Section One</p>
+  <h2>What I am working with</h2>
+  <p>I am going to be straight with you about the limits of this analysis, because I would rather you trust the reasoning than the precision.</p>
+  <p>I searched every unfurnished long-term rental in the corridor with a private pool at this size. <b>Four properties in total. Only two of them have actually leased.</b></p>
+
+  <div class="pull">
+    <p>Two leases is not a market. It is a sample. I can tell you what those two homes achieved and adjust honestly from them, but a home like yours does not have a reliable comparable, because very few exist and very few people rent them.</p>
+  </div>
+
+  <p>That cuts both ways. There is little direct competition. There are also very few renters looking for a 5,820 square foot home at this price point in Osceola County, and the ones who exist are not shopping every week.</p>
+</section>
+
+<section>
+  <p class="snum">Section Two</p>
+  <h2>The comparable set</h2>
+
+  <div class="tscroll">
+  <table>
+    <thead><tr><th>Property</th><th>Community</th><th class="num">Sq ft</th><th class="num">Built</th><th>Pool</th><th class="num">Rent</th><th class="num">$/sf</th><th class="num">Days</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr class="gold"><td>9646 Reymont St</td><td>Laureate Park</td><td class="num">3,783</td><td class="num">2017</td><td>Yes</td><td class="num">$7,550</td><td class="num">$2.00</td><td class="num"><span class="pill fast">7</span></td><td>Leased</td></tr>
+      <tr class="gold"><td>14728 Henson Rd</td><td>Isle of Pines</td><td class="num">4,005</td><td class="num">1994</td><td>Yes</td><td class="num">$5,000</td><td class="num">$1.25</td><td class="num">39</td><td>Leased</td></tr>
+      <tr><td>13173 Lower Harden Ave</td><td>Laureate Park</td><td class="num">4,687</td><td class="num">2014</td><td>Yes</td><td class="num">$7,500</td><td class="num">$1.60</td><td class="num">3</td><td>Active</td></tr>
+      <tr><td>10822 Mobberley Cir</td><td>Eagle Creek</td><td class="num">4,817</td><td class="num">2017</td><td>Yes</td><td class="num">$6,500</td><td class="num">$1.35</td><td class="num"><span class="pill slow">72</span></td><td>Active</td></tr>
+      <tr class="hi"><td>3167 Whisper Wind Dr — your home</td><td>Lake Ajay Village</td><td class="num">5,820</td><td class="num">2024</td><td>Yes</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>—</td></tr>
+    </tbody>
+    <caption>Unfurnished long-term rentals, 3,783 to 4,817 sq ft. Your home is larger than all of them.</caption>
+  </table>
+  </div>
+
+  <h3>What this table is really telling us</h3>
+  <p><b>Location is the dominant variable, by a very wide margin.</b> The same quality of home earns $2.00 a square foot in Laureate Park and $1.25 in Isle of Pines. That is not a small adjustment — it is the single largest factor in this analysis.</p>
+  <p><b>The one home outside Lake Nona proper is struggling.</b> Eagle Creek at $6,500 has sat <b>72 days</b> without leasing — and Eagle Creek is a gated golf community with stronger name recognition than Lake Ajay Village.</p>
+  <p><b>The only fast lease in the set is in Laureate Park.</b> 9646 Reymont leased in <b>seven days</b> at $2.00 a square foot. The other home that leased, in Isle of Pines, took <b>39 days</b> at $1.25. That gap — in both rent and speed — is the clearest evidence available of where demand actually sits in this corridor.</p>
+  <p>The second Laureate Park home is only three days on market, which tells us nothing yet. I have included it for context rather than as evidence.</p>
+</section>
+
+<section>
+  <p class="snum">Section Three</p>
+  <h2>Where the value <em>actually is</em></h2>
+  <p>I want to be clear about what I am pricing, because it is not what the sale listing emphasizes.</p>
+
+  <div class="box">
+    <h3>What carries real rental value</h3>
+    <ul>
+      <li><b>The home itself.</b> Six bedrooms, 2024 construction, elevator, theater, wine cellar, chef's kitchen, first-floor primary suite. This is the strongest interior package in the comparable set by some distance.</li>
+      <li><b>The pool and spa.</b> A 20 by 40 screened pool is close to essential at this price point — every comparable that has leased in this segment has one.</li>
+      <li><b>The land and the outlook.</b> At 0.89 acres you have more than twice the lot of the Laureate Park comparables, with an open view across the water from the rear of the home.</li>
+      <li><b>The four-car garage</b> with golf cart parking, against two and three bays elsewhere.</li>
+    </ul>
+  </div>
+
+  <div class="box warn" style="border-left:4px solid var(--red)">
+    <h3>The lake — real value, but a limited one</h3>
+    <p>Your home is on the water and the view is genuinely lovely. I have given it value. I have not given it the premium a lakefront listing usually carries, and I want to explain why rather than leave you to discover it through a slow campaign.</p>
+    <p><b>There is a difference between a lake you look at and a lake you use.</b> The property has no sandy beach and no private dock.</p>
+    <p>A renter paying at this level who is specifically seeking a lake lifestyle wants to step off their own property onto their own dock. That renter will keep looking. The renter who takes this home is paying for the house, the pool and the land, and treating the view as a pleasant addition rather than the reason they signed.</p>
+    <p>So the view carries value and I have accounted for it. It simply carries less than frontage with a dock would, and pricing as though it were the latter is how a home at this level sits for four months.</p>
+  </div>
+
+  <div class="box warn" style="border-left:4px solid var(--red)">
+    <h3>The address</h3>
+    <p>St. Cloud and an Osceola County address rent for meaningfully less than Lake Nona and Orange County, even for an identical home. That is simply what the data shows, and the two slowest listings in this set are the two outside Lake Nona proper.</p>
+    <p>It is not a reflection of your home. It is a reflection of where corporate relocations, Medical City professionals and the renters at this price point are looking.</p>
+  </div>
+</section>
+
+<section>
+  <p class="snum">Section Four</p>
+  <h2>The adjustments</h2>
+  <p>I worked from both leased comparables independently, because with only two I would rather show you the range than present a single figure as certainty.</p>
+
+  <div class="tscroll">
+  <table>
+    <thead><tr><th>Adjustment</th><th class="num">From 14728 Henson</th><th class="num">From 9646 Reymont</th></tr></thead>
+    <tbody>
+      <tr><td>Leased rent</td><td class="num">$5,000</td><td class="num">$7,550</td></tr>
+      <tr><td>Size <span style="color:var(--muted)">(+1,815 / +2,037 sq ft at a diminishing rate)</span></td><td class="num pos">+$545</td><td class="num pos">+$610</td></tr>
+      <tr><td>Year built <span style="color:var(--muted)">(2024 vs 1994 / 2017)</span></td><td class="num pos">+$600</td><td class="num pos">+$200</td></tr>
+      <tr><td>Lot size</td><td class="num pos">+$150</td><td class="num pos">+$200</td></tr>
+      <tr><td>Garage <span style="color:var(--muted)">(4-car vs 3-car)</span></td><td class="num pos">+$150</td><td class="num pos">+$150</td></tr>
+      <tr><td>Elevator, theater, wine cellar, sixth bedroom</td><td class="num pos">+$400</td><td class="num pos">+$300</td></tr>
+      <tr><td>Location <span style="color:var(--muted)">(Laureate Park premium)</span></td><td class="num">—</td><td class="num neg">−$1,500</td></tr>
+      <tr class="hi"><td>Indication</td><td class="num">$6,845</td><td class="num">$7,510</td></tr>
+    </tbody>
+    <caption>Size is adjusted at a diminishing rate because rent does not scale proportionally above roughly 4,000 square feet — the pool of renters shrinks as the house grows.</caption>
+  </table>
+  </div>
+
+  <p>So on paper, the home indicates somewhere between <b>$6,845 and $7,510</b>.</p>
+
+  <div class="pull">
+    <p>I do not believe you will achieve that, and I would be doing you a disservice to put it on the listing.</p>
+  </div>
+
+  <p>Here is why. <b>10822 Mobberley Circle in Eagle Creek is asking $6,500 and has not leased in 72 days.</b> Eagle Creek is a gated golf community with stronger name recognition than Lake Ajay Village, and that home is 1,000 square feet smaller — which means it draws from a larger pool of renters, not a smaller one.</p>
+  <p>If $6,500 will not move a 4,817 square foot home in Eagle Creek, a higher number will not move a 5,820 square foot home in St. Cloud. The adjustment grid describes what the home is worth. The two listings sitting unleased describe what the market is currently paying.</p>
+</section>
+
+<section>
+  <p class="snum">Section Five</p>
+  <h2>Why $5,950 — and what to expect</h2>
+
+  <div class="box">
+    <h3>It goes below the listing that is already stuck</h3>
+    <p>Mobberley at $6,500 has demonstrated that this price does not move a large pool home outside Lake Nona right now. At $5,950 you are $550 beneath it, with 1,000 more square feet, newer construction and a larger lot.</p>
+  </div>
+  <div class="box">
+    <h3>It is $1.02 per square foot</h3>
+    <p>Against $1.60 for Laureate Park, $1.35 for Eagle Creek and $1.25 for Isle of Pines. Large homes always command less per foot, and at $1.02 your home is positioned as the clear value in the segment rather than the most expensive thing in it.</p>
+  </div>
+  <div class="box">
+    <h3>I expect this to take time regardless</h3>
+    <p>I want to set this expectation honestly at the outset. The two homes in this set that leased took <b>7 and 39 days</b> — both in Lake Nona. The one outside it has taken <b>72 days</b> and counting.</p>
+    <p>Even priced correctly, a home of this size and price in Osceola County should be expected to take <b>60 to 90 days</b>, and I would rather tell you that now than have it come as a disappointment in week six.</p>
+  </div>
+</section>
+
+<section>
+  <p class="snum">Section Six</p>
+  <h2>What the number on the lease <em>actually earns you</em></h2>
+  <p>This matters more at this price point than at any other, because the daily cost of vacancy is so large.</p>
+  <p>Every vacant day at $5,950 costs <b>$196</b>. At $6,500 it costs <b>$214</b>. The rent that matters is not the figure on the lease — it is what you collect across twelve months after vacancy, divided by twelve.</p>
+
+  <div class="tscroll">
+  <table>
+    <thead><tr><th>Scenario</th><th class="num">Rent</th><th class="num">Days vacant</th><th class="num">Collected over 12 months</th><th class="num">True monthly rent</th></tr></thead>
+    <tbody>
+      <tr class="hi"><td>Launch at $5,950, leases in 45 days</td><td class="num">$5,950</td><td class="num">45</td><td class="num">$62,597</td><td class="num"><b>$5,216</b></td></tr>
+      <tr><td>Launch at $5,950, leases in 60 days</td><td class="num">$5,950</td><td class="num">60</td><td class="num">$59,663</td><td class="num">$4,972</td></tr>
+      <tr class="bad"><td>Hold for $6,500, leases in 90 days</td><td class="num">$6,500</td><td class="num">90</td><td class="num">$58,767</td><td class="num">$4,897</td></tr>
+      <tr class="bad"><td>Hold for $6,500, leases in 120 days</td><td class="num">$6,500</td><td class="num">120</td><td class="num">$52,356</td><td class="num">$4,363</td></tr>
+      <tr class="bad"><td>Hold for $6,500, leases in 150 days</td><td class="num">$6,500</td><td class="num">150</td><td class="num">$45,945</td><td class="num">$3,829</td></tr>
+    </tbody>
+    <caption>Twelve months measured from the day the home comes to market.</caption>
+  </table>
+  </div>
+
+  <div class="big">
+    <div class="n neg">$10,241</div>
+    <p>Launching at <b>$5,950</b> and leasing in 45 days collects <b>$10,241 more</b> over twelve months than holding for $6,500 and leasing in 120 days — which is roughly where the Eagle Creek listing is heading.</p>
+    <p>The higher number would look better on the lease. It would put substantially less money in your account.</p>
+  </div>
+
+  <p>The break-even is worth knowing precisely. The $550 difference between $5,950 and $6,500 is worth <b>$6,600 over a twelve-month lease</b>. Each vacant day at $6,500 costs $214. So holding for the higher rent only pays if it costs you <b>fewer than 31 additional days</b> of vacancy. The listing it would be competing with is already at 72.</p>
+</section>
+
+<section>
+  <p class="snum">Section Seven</p>
+  <h2>This does not meet <em>your expectation</em></h2>
+  <p>I want to say this plainly rather than let you reach the end of the report and feel I had avoided it.</p>
+  <p>You told me you expect a high return, and I understood exactly what you meant. <b>This number does not deliver one, and I am not going to present it as though it does.</b></p>
+
+  <div class="pull">
+    <p>At $5,950 a month, the gross rent on a three million dollar asset is roughly 2.4% a year before a single expense is paid. Against private lending at the rates you are accustomed to, that is not a competitive return and I would not argue otherwise.</p>
+  </div>
+
+  <p>I could have found a higher number for this report. I could have pointed at the Laureate Park home that leased at $7,550 and left the location difference out of it. You would have felt better reading it, and four months from now the home would still be empty and we would be having a worse conversation than this one.</p>
+  <p>So here is the honest position, and you are entitled to it before you decide anything.</p>
+
+  <div class="box">
+    <h3>No rent figure will produce the return you are describing</h3>
+    <p>This is not about my number being conservative. For this home to generate the kind of yield you earn elsewhere, the rent would need to be several times what any renter in this market will pay — and that is true of nearly every luxury home at this value, regardless of who manages it or how it is marketed.</p>
+    <p>A property at this level is an appreciation and lifestyle asset that happens to be rentable. It is not an income asset, and the rental market will never make it one.</p>
+  </div>
+
+  <div class="box">
+    <h3>What renting actually does for you</h3>
+    <p>It is worth being precise about the real benefit, because it is not yield.</p>
+    <p>Renting converts your carrying costs — the property taxes, the insurance, the HOA, the pool and lawn, the upkeep on an empty house — from money leaving your account into money that is largely covered. It also keeps the home occupied, maintained and monitored rather than sitting unoccupied, which carries its own risks and its own insurance implications.</p>
+    <p>That is a meaningful outcome. It is simply a different one from the return you are measuring against.</p>
+  </div>
+
+  <div class="box">
+    <h3>And it has a cost you should weigh</h3>
+    <p>A twelve-month lease takes the home off the buyer market for twelve months. If selling remains your priority, that matters more than the rent does, and it is the single most important thing for you to decide before we go any further.</p>
+    <p>I would rather you make that decision clearly now than discover the tension in month three with a resident in place and a buyer at the door.</p>
+  </div>
+
+  <p>If after reading this you decide renting is not the right use of the asset, I will tell you honestly that I think that is a reasonable conclusion, and I would rather hear it now than market a home at a price you never agreed with.</p>
+</section>
+
+<section>
+  <p class="snum">Section Eight</p>
+  <h2>How I would manage it</h2>
+  <p>I will not promise a number of days, and in this segment I would be particularly wrong to try.</p>
+  <p>What I will do is measure — inquiries, showings booked and showings attended. Because this market moves more slowly, my first checkpoint is <b>day 14</b> rather than day five — a quiet first week at this price point is normal and not yet information.</p>
+  <p>If activity by day 14 is not strong enough for me to <b>choose</b> a well-qualified resident rather than accept whoever applies, I move to $5,650. If the market says that is still not enough, I go to $5,395 at day 30 and keep reading it. $5,395 is a step, not a bottom.</p>
+
+  <div class="pull">
+    <p>I will also watch the Eagle Creek listing closely. It has been sitting 72 days and will have to reduce. When it does, the field moves and I need to move with it rather than three weeks later.</p>
+  </div>
+
+  <p>One practical item I would want to settle before launch. <b>Pool and lawn service should remain with you</b> rather than the resident — at this level the cost of a neglected pool far exceeds the service fee, and I do not recommend placing either on a tenant.</p>
+</section>
+
+<section>
+  <p class="snum">Section Nine</p>
+  <h2>Summary</h2>
+  <ul>
+    <li><b>This does not meet the return you described, and I am not presenting it as though it does.</b> At $5,950 the gross yield on a $3M asset is about 2.4% before expenses. No rent figure in this market will produce the yield you earn on private notes — that is true of nearly every luxury home at this value.</li>
+    <li><b>What renting does deliver</b> is coverage of your carrying costs and an occupied, maintained, monitored home — a different outcome from yield, but a real one.</li>
+    <li><b>Only two comparable homes have leased</b> in this segment across the corridor this year. Any number here is an educated estimate, and I have been deliberately conservative.</li>
+    <li><b>Location is the dominant variable.</b> The same quality of home earns $2.00 a square foot in Laureate Park and $1.25 in Isle of Pines.</li>
+    <li><b>The one listing outside Lake Nona proper is struggling</b> — Eagle Creek at $6,500, unleased after 72 days, in a better-known community and 1,000 sq ft smaller than your home.</li>
+    <li><b>The lake is a view, not a lifestyle.</b> No sandy beach and no private dock. The view carries value and I have accounted for it, but less than usable frontage would. The core value is the home, the pool and the land.</li>
+    <li>The adjustment grids indicate <b>$6,845 to $7,510</b> — but the market is not currently paying that, and I will not list at a number the evidence contradicts.</li>
+    <li>At <b>$5,950</b> you are $550 below a smaller home in a better-known community that has already failed for 72 days, at <b>$1.02 per square foot</b>.</li>
+    <li><b>Expect 60 to 90 days even priced correctly.</b> This segment is slow by nature.</li>
+    <li>Holding for $6,500 only pays if it costs fewer than <b>31 extra days</b> of vacancy. Leasing at $5,950 in 45 days collects <b>$10,241 more</b> than $6,500 in 120.</li>
+  </ul>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="sig">Curating Lake Nona's Finest Rental Portfolio</div>
+    <p><b>Verandah Properties, LLC</b><br>Pamela Syvertson, Owner &amp; Broker · License CQ1048619 · <a href="tel:4078550331">407-855-0331</a></p>
+    <p style="font-size:.84rem;color:#8C877F;max-width:74ch">Market data sourced from Stellar MLS as of October 2, 2026, and is deemed reliable but not guaranteed. Comparable analysis reflects unfurnished long-term single-family rentals with private pools in the Lake Nona, St. Cloud and east Orange County corridor. With only two leased comparables available in this segment, this analysis carries a wider margin than usual and should be read as an informed opinion rather than a precise figure. This is an opinion of value, not an appraisal.</p>
+  </div>
+</footer>
+
+</body>
+</html>
